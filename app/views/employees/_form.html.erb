@@ -1,0 +1,30 @@
+<div class="employe-form">
+  <%= form_for @employee do |f| %>
+    <%= render partial: 'shared/error', locals: {obj: @employee} %>
+    <fieldset>
+      <legend>Employee Information</legend>
+      <%= f.label :first_name %>
+      <%= f.text_field :first_name %>
+
+      <%= f.label :last_name %>
+      <%= f.text_field :last_name %>
+
+      <%= f.label :alias %>
+      <%= f.text_field :alias %>
+
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+
+      <%= f.label :office %>
+      <%= f.text_field :office %>
+
+      <%= f.label :img_url %>
+      <%= f.text_field :img_url %>
+      <hr>
+      <h4>Select Dog</h4>
+      <%= f.collection_select :dog_id, Dog.all, :id, :name %>
+
+      <%= f.submit 'Create employee' %>
+    </fieldset>
+  <% end %>
+</div>

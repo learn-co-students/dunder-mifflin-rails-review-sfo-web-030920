@@ -1,0 +1,12 @@
+<h1><%= dog.name %> Profile</h1>
+<h1><%= link_to dog.name, dog_path(dog) %></h1>
+<p>Doggy breed: <%= dog.breed %></p>
+<p>Doggy age: <%= dog.age %></p>
+<p>Doggy id: <%= dog.id %></p>
+
+<h3><%= dog.name %> current employees</h3>
+<ul>
+  <% dog.employees.each do |empl| %>
+    <li><%= link_to empl.first_name, employee_path(empl) %>  -  <%= empl.last_name %></li>
+  <% end %>
+</ul>
